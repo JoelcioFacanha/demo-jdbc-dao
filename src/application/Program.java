@@ -2,7 +2,6 @@ package application;
 
 import java.util.List;
 
-import db.DB;
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
@@ -25,7 +24,12 @@ public class Program {
 			System.out.println(s);
 		}
 
-		DB.closeConnection();
+		System.out.println("=== Test 01 Seller findALL ===");
+		list = sellerDao.findAll();
+
+		for (Seller s : list) {
+			System.out.println(s);
+		}
 
 	}
 
